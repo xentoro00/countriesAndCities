@@ -5,7 +5,9 @@ const port = 3000;
 
 app.use(express.json());
 
-
+app.get('/', (req, res) => {
+    return res.json("welcome");
+})
 app.get('/getAllCountries', (req, res) => {
     return res.json([
         {
