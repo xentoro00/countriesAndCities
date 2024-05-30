@@ -979,8 +979,8 @@ app.get('/getAllCountries', (req, res) => {
     ]);
 })
 
-const getAllCitiesFromCountry = (req,res) => {
-    const countryCode = req.body.iso2;
+app.post('/getAllCitiesFromCountry/:iso2', (req,res) => {
+    const countryCode = req.params.iso2;
 
     const allCities = [
         {
@@ -192466,7 +192466,7 @@ const getAllCitiesFromCountry = (req,res) => {
         if(city.iso2 == countryCode) cities.push(city.city);
     })
     return res.json(cities);
-}
+})
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
