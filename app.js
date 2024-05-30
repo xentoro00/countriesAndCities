@@ -982,7 +982,7 @@ app.get('/getAllCountries', (req, res) => {
   ]);
 })
 
-app.post('/getAllCitiesFromCountry/:iso2', (req,res) => {
+app.get('/getAllCitiesFromCountry/:iso2', (req,res) => {
   const countryCode = req.params.iso2;
 
   const allCities = [
