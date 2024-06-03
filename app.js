@@ -4,8 +4,17 @@ const cors = require('cors');
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors());
-// Root route
+// CORS configuration
+const corsOptions = {
+    origin: '*',  // Allow all origins
+    methods: ['GET'],  // Allow only GET method
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+  };
+  
+  app.use(cors(corsOptions));
+  
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
