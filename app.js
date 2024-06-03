@@ -16,7 +16,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
-    res.json(corsOptions);
 });
 
 app.get('/getAllCountries', (req, res) => {
